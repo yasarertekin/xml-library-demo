@@ -1,0 +1,9 @@
+nl/koop/xmldemo/dto/ComparisonResultTest.class
+nl/koop/xmldemo/service/DOMParserServiceTest.class
+nl/koop/xmldemo/service/SAXParserServiceTest.class
+nl/koop/xmldemo/dto/ParseResultTest.class
+nl/koop/xmldemo/service/StAXParserServiceTest.class
+nl/koop/xmldemo/controller/XmlDemoControllerTest.class
+nl/koop/xmldemo/XmlDemoIntegrationTest.class
+nl/koop/xmldemo/service/XmlComparisonServiceTest.class
+nl/koop/xmldemo/service/JAXBParserServiceTest.class

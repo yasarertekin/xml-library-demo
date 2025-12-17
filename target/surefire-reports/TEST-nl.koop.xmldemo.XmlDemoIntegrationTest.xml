@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="nl.koop.xmldemo.XmlDemoIntegrationTest" time="14.268" tests="13" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/yasarertekin/Development/xml-library-demo/target/test-classes:/Users/yasarertekin/Development/xml-library-demo/target/classes:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/yasarertekin/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/yasarertekin/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/yasarertekin/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/yasarertekin/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/yasarertekin/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/yasarertekin/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/yasarertekin/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/yasarertekin/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/yasarertekin/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.2.0/spring-boot-starter-thymeleaf-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.2.RELEASE/thymeleaf-spring6-3.1.2.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/thymeleaf/thymeleaf/3.1.2.RELEASE/thymeleaf-3.1.2.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/yasarertekin/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/yasarertekin/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/yasarertekin/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/yasarertekin/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/yasarertekin/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/yasarertekin/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/yasarertekin/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/yasarertekin/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/yasarertekin/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/yasarertekin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/yasarertekin/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/yasarertekin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/yasarertekin/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/yasarertekin/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/yasarertekin/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/yasarertekin/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/yasarertekin/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/yasarertekin/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="user.timezone" value="Europe/Amsterdam"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="NL"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/yasarertekin/Development/xml-library-demo/target/surefire/surefirebooter-20251217072641196_3.jar /Users/yasarertekin/Development/xml-library-demo/target/surefire 2025-12-17T07-26-40_749-jvmRun1 surefire-20251217072641196_1tmp surefire_0-20251217072641196_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/yasarertekin/Development/xml-library-demo/target/test-classes:/Users/yasarertekin/Development/xml-library-demo/target/classes:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/yasarertekin/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/yasarertekin/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/yasarertekin/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/yasarertekin/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/yasarertekin/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/yasarertekin/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/yasarertekin/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/yasarertekin/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/yasarertekin/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/yasarertekin/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/3.2.0/spring-boot-starter-thymeleaf-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/thymeleaf/thymeleaf-spring6/3.1.2.RELEASE/thymeleaf-spring6-3.1.2.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/thymeleaf/thymeleaf/3.1.2.RELEASE/thymeleaf-3.1.2.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/yasarertekin/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/yasarertekin/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/yasarertekin/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/yasarertekin/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/yasarertekin/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/yasarertekin/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/yasarertekin/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/yasarertekin/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/yasarertekin/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/yasarertekin/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/yasarertekin/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/yasarertekin/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/yasarertekin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/yasarertekin/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/yasarertekin/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/yasarertekin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/yasarertekin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/yasarertekin/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/yasarertekin/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/yasarertekin/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/yasarertekin/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/yasarertekin/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/yasarertekin/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/yasarertekin/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/yasarertekin"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk@17/17.0.16/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/yasarertekin/Development/xml-library-demo"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="FILE_LOG_CHARSET" value="US-ASCII"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/Users/yasarertekin/Development/xml-library-demo/target/surefire/surefirebooter-20251217072641196_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.16+0"/>
+    <property name="user.name" value="yasarertekin"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.7"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="US-ASCII"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/yasarertekin/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/m0/xm44pd9n3mvbnx6fv7419dnr0000gn/T/"/>
+    <property name="catalina.home" value="/private/var/folders/m0/xm44pd9n3mvbnx6fv7419dnr0000gn/T/tomcat.0.4798011700051184224"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="/Users/yasarertekin/Development/xml-library-demo"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="59874"/>
+    <property name="CONSOLE_LOG_CHARSET" value="US-ASCII"/>
+    <property name="catalina.base" value="/private/var/folders/m0/xm44pd9n3mvbnx6fv7419dnr0000gn/T/tomcat.0.4798011700051184224"/>
+    <property name="native.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/yasarertekin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="17.0.16+0"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[xml-library-demo] "/>
+  </properties>
+  <testcase name="testCompareWithMultipleArticles" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="2.66">
+    <system-out><![CDATA[07:26:43.770 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [nl.koop.xmldemo.XmlDemoIntegrationTest]: XmlDemoIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07:26:44.068 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration nl.koop.xmldemo.XmlLibraryDemoApplication for test class nl.koop.xmldemo.XmlDemoIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-17T07:26:44.724+01:00  INFO 59874 --- [xml-library-demo] [           main] nl.koop.xmldemo.XmlDemoIntegrationTest   : Starting XmlDemoIntegrationTest using Java 17.0.16 with PID 59874 (started by yasarertekin in /Users/yasarertekin/Development/xml-library-demo)
+2025-12-17T07:26:44.725+01:00 DEBUG 59874 --- [xml-library-demo] [           main] nl.koop.xmldemo.XmlDemoIntegrationTest   : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-17T07:26:44.728+01:00  INFO 59874 --- [xml-library-demo] [           main] nl.koop.xmldemo.XmlDemoIntegrationTest   : No active profile set, falling back to 1 default profile: "default"
+2025-12-17T07:26:47.272+01:00  INFO 59874 --- [xml-library-demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-12-17T07:26:47.290+01:00  INFO 59874 --- [xml-library-demo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-17T07:26:47.291+01:00  INFO 59874 --- [xml-library-demo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-17T07:26:47.383+01:00  INFO 59874 --- [xml-library-demo] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-17T07:26:47.385+01:00  INFO 59874 --- [xml-library-demo] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2611 ms
+2025-12-17T07:26:47.634+01:00  INFO 59874 --- [xml-library-demo] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-17T07:26:47.748+01:00 DEBUG 59874 --- [xml-library-demo] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2025-12-17T07:26:48.015+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-17T07:26:48.075+01:00 DEBUG 59874 --- [xml-library-demo] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-17T07:26:48.125+01:00 DEBUG 59874 --- [xml-library-demo] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-17T07:26:48.336+01:00  INFO 59874 --- [xml-library-demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 51856 (http) with context path ''
+2025-12-17T07:26:48.355+01:00  INFO 59874 --- [xml-library-demo] [           main] nl.koop.xmldemo.XmlDemoIntegrationTest   : Started XmlDemoIntegrationTest in 4.123 seconds (process running for 7.05)
+2025-12-17T07:26:49.710+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:49.727+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:49.728+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="art-1"><kop>Artikel 1</kop></artikel><artikel id="art-2"><kop>Artikel 2</kop></artikel><artikel id="art-3"><kop>Artikel 3</kop></artikel><artikel id="art-4"><kop>Artikel 4</kop></artikel><artikel id="art-5"><kop>Artikel 5</kop></artikel><artikel id="art-6"><kop>Artikel 6</kop></artikel><artikel id="art-7"><kop>Artikel 7</kop></artikel><artikel id="art-8"><kop>Artikel 8</kop></artikel><artikel id="art-9"><kop>Artikel 9</kop></artikel><artikel id="art-10"><kop>Artikel 10</kop></artikel><artikel id="art-11"><kop>Artikel 11</kop></artikel><artikel id="art-12"><kop>Artikel 12</kop></artikel><artikel id="art-13"><kop>Artikel 13</kop></artikel><artikel id="art-14"><kop>Artikel 14</kop></artikel><artikel id="art-15"><kop>Artikel 15</kop></artikel><artikel id="art-16"><kop>Artikel 16</kop></artikel><artikel id="art-17"><kop>Artikel 17</kop></artikel><artikel id="art-18"><kop>Artikel 18</kop></artikel><artikel id="art-19"><kop>Artikel 19</kop></artikel><artikel id="art-20"><kop>Artikel 20</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:49.816+01:00  INFO 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-17T07:26:49.818+01:00  INFO 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-17T07:26:49.819+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-17T07:26:49.819+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-17T07:26:49.819+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-17T07:26:49.824+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@32142479
+2025-12-17T07:26:49.825+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@24f3d208
+2025-12-17T07:26:49.825+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-17T07:26:49.825+01:00  INFO 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-12-17T07:26:49.839+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:49.850+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:49.872+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="art-1"><kop>Artikel 1</kop></artikel><artikel id="art-2"><kop (truncated)..."]
+Received XML content length: 1054 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 20 artikelen, 41ms, 2171KB
+Testing SAX...
+  ✓ SAX: 20 artikelen, 22ms, 289KB
+Testing StAX...
+  ✓ StAX: 20 artikelen, 23ms, 554KB
+Testing JAXB...
+  ✓ JAXB: 0 artikelen, 297ms, 40543KB
+
+=== Comparison Complete ===
+Snelste: SAX (22ms)
+Minste geheugen: SAX (289KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:50.842+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:50.933+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@3292718c]
+2025-12-17T07:26:50.993+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:50.993+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:51.015+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testCompareEndpointWithValidXml" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.668">
+    <system-out><![CDATA[2025-12-17T07:26:51.107+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:51.110+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:51.111+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0" encoding="UTF-8"?>
+<wet id="wet-001">
+    <artikel id="art-1">
+        <kop>Test Artikel</kop>
+    </artikel>
+</wet>] as "text/plain"
+2025-12-17T07:26:51.118+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:51.119+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:51.120+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-001"><EOL>    <artikel id="art-1"><EOL>        <kop>Test (truncated)..."]
+Received XML content length: 136 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 1 artikelen, 14ms, 893KB
+Testing SAX...
+  ✓ SAX: 1 artikelen, 11ms, 440KB
+Testing StAX...
+  ✓ StAX: 1 artikelen, 10ms, 211KB
+Testing JAXB...
+  ✓ JAXB: 0 artikelen, 29ms, 239KB
+
+=== Comparison Complete ===
+Snelste: StAX (10ms)
+Minste geheugen: StAX (211KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:51.742+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json]
+2025-12-17T07:26:51.745+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@3eac3699]
+2025-12-17T07:26:51.747+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:51.748+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:51.748+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateXmlWithMaxLimit" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.14">
+    <system-out><![CDATA[2025-12-17T07:26:51.782+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/generate/15000
+2025-12-17T07:26:51.783+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:51.785+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/generate/15000", parameters={}
+2025-12-17T07:26:51.789+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#generateLargeXml(int)
+Generating XML with 10000 articles
+2025-12-17T07:26:51.810+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [text/plain, application/json, application/*+json, */*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-17T07:26:51.810+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+2025-12-17T07:26:51.816+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:51.817+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2025-12-17T07:26:51.830+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+]]></system-out>
+  </testcase>
+  <testcase name="testIndexPageLoads" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.486">
+    <system-out><![CDATA[2025-12-17T07:26:51.922+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/
+2025-12-17T07:26:51.922+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:51.924+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2025-12-17T07:26:51.925+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#index(Model)
+2025-12-17T07:26:51.971+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:52.369+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:52.372+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/html;charset=UTF-8"
+2025-12-17T07:26:52.396+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateXmlStructure" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.018">
+    <system-out><![CDATA[2025-12-17T07:26:52.415+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/generate/3
+2025-12-17T07:26:52.416+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:52.417+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/generate/3", parameters={}
+2025-12-17T07:26:52.417+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#generateLargeXml(int)
+Generating XML with 3 articles
+2025-12-17T07:26:52.419+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [text/plain, application/json, application/*+json, */*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-17T07:26:52.419+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+2025-12-17T07:26:52.421+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:52.421+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:52.422+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+]]></system-out>
+  </testcase>
+  <testcase name="testComparePerformanceMetrics" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.668">
+    <system-out><![CDATA[2025-12-17T07:26:52.433+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:52.433+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:52.433+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="art-1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:52.436+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:52.437+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:52.439+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="art-1"><kop>Test</kop></artikel></wet>"]
+Received XML content length: 77 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 1 artikelen, 16ms, 135KB
+Testing SAX...
+  ✓ SAX: 1 artikelen, 9ms, 119KB
+Testing StAX...
+  ✓ StAX: 1 artikelen, 11ms, 135KB
+Testing JAXB...
+  ✓ JAXB: 0 artikelen, 26ms, 239KB
+
+=== Comparison Complete ===
+Snelste: SAX (9ms)
+Minste geheugen: SAX (119KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:53.076+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:53.079+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@26d0f451]
+2025-12-17T07:26:53.085+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:53.086+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-12-17T07:26:53.087+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+]]></system-out>
+  </testcase>
+  <testcase name="testConcurrentRequests" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="1.421">
+    <system-out><![CDATA[2025-12-17T07:26:53.127+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-3] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:53.127+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-4] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:53.127+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-5] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:53.130+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:53.130+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:53.130+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-7] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:53.130+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-6] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:53.130+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:53.131+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-6] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:53.132+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-7] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:53.131+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-3] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:53.132+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-5] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:53.132+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-4] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:53.132+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-6] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:53.133+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-7] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain"
+2025-12-17T07:26:53.141+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:53.141+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:53.141+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:53.141+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:53.141+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:53.144+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:53.146+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:53.147+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:53.147+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:53.146+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:53.149+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+2025-12-17T07:26:53.149+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+Received XML content length: 73 characters
+2025-12-17T07:26:53.149+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+Received XML content length: 73 characters
+
+=== Starting XML Parsing Comparison ===
+2025-12-17T07:26:53.150+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+Testing DOM...
+2025-12-17T07:26:53.150+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+Received XML content length: 73 characters
+Received XML content length: 73 characters
+Received XML content length: 73 characters
+
+=== Starting XML Parsing Comparison ===
+
+=== Starting XML Parsing Comparison ===
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+Testing DOM...
+Testing DOM...
+  ✓ DOM: 1 artikelen, 106ms, 931KB
+  ✓ DOM: 1 artikelen, 226ms, 1156KB
+  ✓ DOM: 1 artikelen, 19ms, 857KB
+  ✓ DOM: 1 artikelen, 175ms, 1323KB
+  ✓ DOM: 1 artikelen, 63ms, 327KB
+Testing SAX...
+Testing SAX...
+Testing SAX...
+Testing SAX...
+Testing SAX...
+  ✓ SAX: 1 artikelen, 69ms, 874KB
+  ✓ SAX: 1 artikelen, 12ms, 530KB
+  ✓ SAX: 1 artikelen, 106ms, 1038KB
+  ✓ SAX: 1 artikelen, 184ms, 508KB
+  ✓ SAX: 1 artikelen, 144ms, 1202KB
+Testing StAX...
+Testing StAX...
+Testing StAX...
+Testing StAX...
+  ✓ StAX: 1 artikelen, 18ms, 892KB
+Testing StAX...
+  ✓ StAX: 1 artikelen, 55ms, 892KB
+  ✓ StAX: 1 artikelen, 16ms, 341KB
+  ✓ StAX: 1 artikelen, 55ms, 669KB
+  ✓ StAX: 1 artikelen, 16ms, 669KB
+Testing JAXB...
+Testing JAXB...
+Testing JAXB...
+Testing JAXB...
+Testing JAXB...
+  ✓ JAXB: 0 artikelen, 257ms, 1059KB
+
+=== Comparison Complete ===
+Snelste: SAX (12ms)
+Minste geheugen: SAX (530KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+  ✓ JAXB: 0 artikelen, 130ms, 1387KB
+
+=== Comparison Complete ===
+Snelste: StAX (55ms)
+Minste geheugen: DOM (327KB)
+Aanbeveling: Voor dit bestand: SAX of StAX aanbevolen (groot bestand). JAXB voor type-safe API's.
+=============================
+
+  ✓ JAXB: 0 artikelen, 86ms, 1877KB
+
+=== Comparison Complete ===
+Snelste: StAX (16ms)
+Minste geheugen: StAX (669KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+  ✓ JAXB: 0 artikelen, 178ms, 1185KB
+
+=== Comparison Complete ===
+Snelste: StAX (55ms)
+Minste geheugen: StAX (669KB)
+Aanbeveling: Voor dit bestand: SAX of StAX aanbevolen (groot bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:54.487+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:54.487+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:54.489+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:54.489+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+  ✓ JAXB: 0 artikelen, 229ms, 2043KB
+
+=== Comparison Complete ===
+Snelste: StAX (16ms)
+Minste geheugen: StAX (341KB)
+Aanbeveling: Voor dit bestand: SAX of StAX aanbevolen (groot bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:54.492+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:54.493+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@4b8a3306]
+2025-12-17T07:26:54.493+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@3132493f]
+2025-12-17T07:26:54.492+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@593e2d52]
+2025-12-17T07:26:54.496+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@3772beb0]
+2025-12-17T07:26:54.492+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@5708055d]
+2025-12-17T07:26:54.509+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-3] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-6] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-4] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-7] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:54.510+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-5] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:54.511+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-5] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-12-17T07:26:54.511+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-12-17T07:26:54.511+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:54.511+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-12-17T07:26:54.514+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-7] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+2025-12-17T07:26:54.515+01:00 DEBUG 59874 --- [xml-library-demo] [       Thread-6] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testCompareWithInvalidXml" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.777">
+    <system-out><![CDATA[2025-12-17T07:26:54.554+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:54.556+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:54.556+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel>] as "text/plain"
+2025-12-17T07:26:54.561+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:54.562+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:54.562+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel>"]
+Received XML content length: 35 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✗ DOM: DOM parsing error: XML document structures must start and end within the same entity.
+Testing SAX...
+  ✗ SAX: SAX parsing error: XML document structures must start and end within the same entity.
+Testing StAX...
+  ✗ StAX: StAX parsing error: ParseError at [row,col]:[1,36]
+Message: XML document structures must start and end within the same entity.
+Testing JAXB...
+  ✗ JAXB: JAXB parsing error: null
+
+=== Comparison Complete ===
+Snelste: null
+Minste geheugen: null
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:55.271+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:55.274+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@3b042309]
+2025-12-17T07:26:55.310+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:55.312+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:55.314+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+    <system-err><![CDATA[[Fatal Error] :1:36: XML document structures must start and end within the same entity.
+]]></system-err>
+  </testcase>
+  <testcase name="testCompareContentTypeHandling" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.684">
+    <system-out><![CDATA[2025-12-17T07:26:55.341+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:55.341+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:55.341+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>] as "text/plain;charset=UTF-8"
+2025-12-17T07:26:55.345+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:55.346+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:55.347+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0"?><wet><artikel id="1"><kop>Test</kop></artikel></wet>"]
+Received XML content length: 73 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 1 artikelen, 16ms, 239KB
+Testing SAX...
+  ✓ SAX: 1 artikelen, 11ms, 226KB
+Testing StAX...
+  ✓ StAX: 1 artikelen, 11ms, 239KB
+Testing JAXB...
+  ✓ JAXB: 0 artikelen, 30ms, 226KB
+
+=== Comparison Complete ===
+Snelste: SAX (11ms)
+Minste geheugen: SAX (226KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:55.995+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:55.998+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@7cde381d]
+2025-12-17T07:26:56.008+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:56.009+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:56.011+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testEndToEndWorkflow" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.801">
+    <system-out><![CDATA[2025-12-17T07:26:56.040+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/
+2025-12-17T07:26:56.042+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:56.045+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2025-12-17T07:26:56.045+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#index(Model)
+2025-12-17T07:26:56.047+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:56.061+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:56.063+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/html;charset=UTF-8"
+2025-12-17T07:26:56.068+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:56.069+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/generate/50
+2025-12-17T07:26:56.070+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:56.071+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/generate/50", parameters={}
+2025-12-17T07:26:56.072+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#generateLargeXml(int)
+Generating XML with 50 articles
+2025-12-17T07:26:56.074+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [text/plain, application/json, application/*+json, */*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-17T07:26:56.074+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+2025-12-17T07:26:56.075+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:56.076+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2025-12-17T07:26:56.076+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:56.078+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:56.078+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:56.079+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [<?xml version="1.0" encoding="UTF-8"?>
+<wet id="wet-groot">
+  <metadata>
+    <titel>Grote Test Wet</titel>
+    <datum>2024-12-15</datum>
+  </metadata>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-1">
+      <kop>Artikel 1</kop>
+      <lid nummer="1">Lid 1 van artikel 1</lid>
+      <lid nummer="2">Lid 2 van artikel 1</lid>
+      <lid nummer="3">Lid 3 van artikel 1</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-2">
+      <kop>Artikel 2</kop>
+      <lid nummer="1">Lid 1 van artikel 2</lid>
+      <lid nummer="2">Lid 2 van artikel 2</lid>
+      <lid nummer="3">Lid 3 van artikel 2</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-3">
+      <kop>Artikel 3</kop>
+      <lid nummer="1">Lid 1 van artikel 3</lid>
+      <lid nummer="2">Lid 2 van artikel 3</lid>
+      <lid nummer="3">Lid 3 van artikel 3</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-4">
+      <kop>Artikel 4</kop>
+      <lid nummer="1">Lid 1 van artikel 4</lid>
+      <lid nummer="2">Lid 2 van artikel 4</lid>
+      <lid nummer="3">Lid 3 van artikel 4</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-5">
+      <kop>Artikel 5</kop>
+      <lid nummer="1">Lid 1 van artikel 5</lid>
+      <lid nummer="2">Lid 2 van artikel 5</lid>
+      <lid nummer="3">Lid 3 van artikel 5</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-6">
+      <kop>Artikel 6</kop>
+      <lid nummer="1">Lid 1 van artikel 6</lid>
+      <lid nummer="2">Lid 2 van artikel 6</lid>
+      <lid nummer="3">Lid 3 van artikel 6</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-7">
+      <kop>Artikel 7</kop>
+      <lid nummer="1">Lid 1 van artikel 7</lid>
+      <lid nummer="2">Lid 2 van artikel 7</lid>
+      <lid nummer="3">Lid 3 van artikel 7</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-8">
+      <kop>Artikel 8</kop>
+      <lid nummer="1">Lid 1 van artikel 8</lid>
+      <lid nummer="2">Lid 2 van artikel 8</lid>
+      <lid nummer="3">Lid 3 van artikel 8</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-9">
+      <kop>Artikel 9</kop>
+      <lid nummer="1">Lid 1 van artikel 9</lid>
+      <lid nummer="2">Lid 2 van artikel 9</lid>
+      <lid nummer="3">Lid 3 van artikel 9</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="1">
+    <titel>Hoofdstuk 1</titel>
+    <artikel id="art-10">
+      <kop>Artikel 10</kop>
+      <lid nummer="1">Lid 1 van artikel 10</lid>
+      <lid nummer="2">Lid 2 van artikel 10</lid>
+      <lid nummer="3">Lid 3 van artikel 10</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-11">
+      <kop>Artikel 11</kop>
+      <lid nummer="1">Lid 1 van artikel 11</lid>
+      <lid nummer="2">Lid 2 van artikel 11</lid>
+      <lid nummer="3">Lid 3 van artikel 11</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-12">
+      <kop>Artikel 12</kop>
+      <lid nummer="1">Lid 1 van artikel 12</lid>
+      <lid nummer="2">Lid 2 van artikel 12</lid>
+      <lid nummer="3">Lid 3 van artikel 12</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-13">
+      <kop>Artikel 13</kop>
+      <lid nummer="1">Lid 1 van artikel 13</lid>
+      <lid nummer="2">Lid 2 van artikel 13</lid>
+      <lid nummer="3">Lid 3 van artikel 13</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-14">
+      <kop>Artikel 14</kop>
+      <lid nummer="1">Lid 1 van artikel 14</lid>
+      <lid nummer="2">Lid 2 van artikel 14</lid>
+      <lid nummer="3">Lid 3 van artikel 14</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-15">
+      <kop>Artikel 15</kop>
+      <lid nummer="1">Lid 1 van artikel 15</lid>
+      <lid nummer="2">Lid 2 van artikel 15</lid>
+      <lid nummer="3">Lid 3 van artikel 15</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-16">
+      <kop>Artikel 16</kop>
+      <lid nummer="1">Lid 1 van artikel 16</lid>
+      <lid nummer="2">Lid 2 van artikel 16</lid>
+      <lid nummer="3">Lid 3 van artikel 16</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-17">
+      <kop>Artikel 17</kop>
+      <lid nummer="1">Lid 1 van artikel 17</lid>
+      <lid nummer="2">Lid 2 van artikel 17</lid>
+      <lid nummer="3">Lid 3 van artikel 17</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-18">
+      <kop>Artikel 18</kop>
+      <lid nummer="1">Lid 1 van artikel 18</lid>
+      <lid nummer="2">Lid 2 van artikel 18</lid>
+      <lid nummer="3">Lid 3 van artikel 18</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-19">
+      <kop>Artikel 19</kop>
+      <lid nummer="1">Lid 1 van artikel 19</lid>
+      <lid nummer="2">Lid 2 van artikel 19</lid>
+      <lid nummer="3">Lid 3 van artikel 19</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="2">
+    <titel>Hoofdstuk 2</titel>
+    <artikel id="art-20">
+      <kop>Artikel 20</kop>
+      <lid nummer="1">Lid 1 van artikel 20</lid>
+      <lid nummer="2">Lid 2 van artikel 20</lid>
+      <lid nummer="3">Lid 3 van artikel 20</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-21">
+      <kop>Artikel 21</kop>
+      <lid nummer="1">Lid 1 van artikel 21</lid>
+      <lid nummer="2">Lid 2 van artikel 21</lid>
+      <lid nummer="3">Lid 3 van artikel 21</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-22">
+      <kop>Artikel 22</kop>
+      <lid nummer="1">Lid 1 van artikel 22</lid>
+      <lid nummer="2">Lid 2 van artikel 22</lid>
+      <lid nummer="3">Lid 3 van artikel 22</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-23">
+      <kop>Artikel 23</kop>
+      <lid nummer="1">Lid 1 van artikel 23</lid>
+      <lid nummer="2">Lid 2 van artikel 23</lid>
+      <lid nummer="3">Lid 3 van artikel 23</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-24">
+      <kop>Artikel 24</kop>
+      <lid nummer="1">Lid 1 van artikel 24</lid>
+      <lid nummer="2">Lid 2 van artikel 24</lid>
+      <lid nummer="3">Lid 3 van artikel 24</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-25">
+      <kop>Artikel 25</kop>
+      <lid nummer="1">Lid 1 van artikel 25</lid>
+      <lid nummer="2">Lid 2 van artikel 25</lid>
+      <lid nummer="3">Lid 3 van artikel 25</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-26">
+      <kop>Artikel 26</kop>
+      <lid nummer="1">Lid 1 van artikel 26</lid>
+      <lid nummer="2">Lid 2 van artikel 26</lid>
+      <lid nummer="3">Lid 3 van artikel 26</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-27">
+      <kop>Artikel 27</kop>
+      <lid nummer="1">Lid 1 van artikel 27</lid>
+      <lid nummer="2">Lid 2 van artikel 27</lid>
+      <lid nummer="3">Lid 3 van artikel 27</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-28">
+      <kop>Artikel 28</kop>
+      <lid nummer="1">Lid 1 van artikel 28</lid>
+      <lid nummer="2">Lid 2 van artikel 28</lid>
+      <lid nummer="3">Lid 3 van artikel 28</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-29">
+      <kop>Artikel 29</kop>
+      <lid nummer="1">Lid 1 van artikel 29</lid>
+      <lid nummer="2">Lid 2 van artikel 29</lid>
+      <lid nummer="3">Lid 3 van artikel 29</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="3">
+    <titel>Hoofdstuk 3</titel>
+    <artikel id="art-30">
+      <kop>Artikel 30</kop>
+      <lid nummer="1">Lid 1 van artikel 30</lid>
+      <lid nummer="2">Lid 2 van artikel 30</lid>
+      <lid nummer="3">Lid 3 van artikel 30</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-31">
+      <kop>Artikel 31</kop>
+      <lid nummer="1">Lid 1 van artikel 31</lid>
+      <lid nummer="2">Lid 2 van artikel 31</lid>
+      <lid nummer="3">Lid 3 van artikel 31</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-32">
+      <kop>Artikel 32</kop>
+      <lid nummer="1">Lid 1 van artikel 32</lid>
+      <lid nummer="2">Lid 2 van artikel 32</lid>
+      <lid nummer="3">Lid 3 van artikel 32</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-33">
+      <kop>Artikel 33</kop>
+      <lid nummer="1">Lid 1 van artikel 33</lid>
+      <lid nummer="2">Lid 2 van artikel 33</lid>
+      <lid nummer="3">Lid 3 van artikel 33</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-34">
+      <kop>Artikel 34</kop>
+      <lid nummer="1">Lid 1 van artikel 34</lid>
+      <lid nummer="2">Lid 2 van artikel 34</lid>
+      <lid nummer="3">Lid 3 van artikel 34</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-35">
+      <kop>Artikel 35</kop>
+      <lid nummer="1">Lid 1 van artikel 35</lid>
+      <lid nummer="2">Lid 2 van artikel 35</lid>
+      <lid nummer="3">Lid 3 van artikel 35</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-36">
+      <kop>Artikel 36</kop>
+      <lid nummer="1">Lid 1 van artikel 36</lid>
+      <lid nummer="2">Lid 2 van artikel 36</lid>
+      <lid nummer="3">Lid 3 van artikel 36</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-37">
+      <kop>Artikel 37</kop>
+      <lid nummer="1">Lid 1 van artikel 37</lid>
+      <lid nummer="2">Lid 2 van artikel 37</lid>
+      <lid nummer="3">Lid 3 van artikel 37</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-38">
+      <kop>Artikel 38</kop>
+      <lid nummer="1">Lid 1 van artikel 38</lid>
+      <lid nummer="2">Lid 2 van artikel 38</lid>
+      <lid nummer="3">Lid 3 van artikel 38</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-39">
+      <kop>Artikel 39</kop>
+      <lid nummer="1">Lid 1 van artikel 39</lid>
+      <lid nummer="2">Lid 2 van artikel 39</lid>
+      <lid nummer="3">Lid 3 van artikel 39</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="4">
+    <titel>Hoofdstuk 4</titel>
+    <artikel id="art-40">
+      <kop>Artikel 40</kop>
+      <lid nummer="1">Lid 1 van artikel 40</lid>
+      <lid nummer="2">Lid 2 van artikel 40</lid>
+      <lid nummer="3">Lid 3 van artikel 40</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-41">
+      <kop>Artikel 41</kop>
+      <lid nummer="1">Lid 1 van artikel 41</lid>
+      <lid nummer="2">Lid 2 van artikel 41</lid>
+      <lid nummer="3">Lid 3 van artikel 41</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-42">
+      <kop>Artikel 42</kop>
+      <lid nummer="1">Lid 1 van artikel 42</lid>
+      <lid nummer="2">Lid 2 van artikel 42</lid>
+      <lid nummer="3">Lid 3 van artikel 42</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-43">
+      <kop>Artikel 43</kop>
+      <lid nummer="1">Lid 1 van artikel 43</lid>
+      <lid nummer="2">Lid 2 van artikel 43</lid>
+      <lid nummer="3">Lid 3 van artikel 43</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-44">
+      <kop>Artikel 44</kop>
+      <lid nummer="1">Lid 1 van artikel 44</lid>
+      <lid nummer="2">Lid 2 van artikel 44</lid>
+      <lid nummer="3">Lid 3 van artikel 44</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-45">
+      <kop>Artikel 45</kop>
+      <lid nummer="1">Lid 1 van artikel 45</lid>
+      <lid nummer="2">Lid 2 van artikel 45</lid>
+      <lid nummer="3">Lid 3 van artikel 45</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-46">
+      <kop>Artikel 46</kop>
+      <lid nummer="1">Lid 1 van artikel 46</lid>
+      <lid nummer="2">Lid 2 van artikel 46</lid>
+      <lid nummer="3">Lid 3 van artikel 46</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-47">
+      <kop>Artikel 47</kop>
+      <lid nummer="1">Lid 1 van artikel 47</lid>
+      <lid nummer="2">Lid 2 van artikel 47</lid>
+      <lid nummer="3">Lid 3 van artikel 47</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-48">
+      <kop>Artikel 48</kop>
+      <lid nummer="1">Lid 1 van artikel 48</lid>
+      <lid nummer="2">Lid 2 van artikel 48</lid>
+      <lid nummer="3">Lid 3 van artikel 48</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-49">
+      <kop>Artikel 49</kop>
+      <lid nummer="1">Lid 1 van artikel 49</lid>
+      <lid nummer="2">Lid 2 van artikel 49</lid>
+      <lid nummer="3">Lid 3 van artikel 49</lid>
+    </artikel>
+  </hoofdstuk>
+  <hoofdstuk nummer="5">
+    <titel>Hoofdstuk 5</titel>
+    <artikel id="art-50">
+      <kop>Artikel 50</kop>
+      <lid nummer="1">Lid 1 van artikel 50</lid>
+      <lid nummer="2">Lid 2 van artikel 50</lid>
+      <lid nummer="3">Lid 3 van artikel 50</lid>
+    </artikel>
+  </hoofdstuk>
+</wet>] as "text/plain"
+2025-12-17T07:26:56.083+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:56.083+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:56.084+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+Received XML content length: 14462 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 50 artikelen, 34ms, 355KB
+Testing SAX...
+  ✓ SAX: 50 artikelen, 15ms, 312KB
+Testing StAX...
+  ✓ StAX: 50 artikelen, 25ms, 141KB
+Testing JAXB...
+  ✓ JAXB: 50 artikelen, 85ms, 1317KB
+
+=== Comparison Complete ===
+Snelste: SAX (15ms)
+Minste geheugen: StAX (141KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:56.811+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:56.814+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@100f4adb]
+2025-12-17T07:26:56.822+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:56.822+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:56.823+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testCompareEndpointWithEmptyXml" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.727">
+    <system-out><![CDATA[2025-12-17T07:26:56.854+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:51856/compare
+2025-12-17T07:26:56.855+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:56.855+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Writing [  ] as "text/plain"
+2025-12-17T07:26:56.859+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/compare", parameters={}
+2025-12-17T07:26:56.860+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#compare(String)
+2025-12-17T07:26:56.861+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "text/plain;charset=UTF-8" to ["  "]
+Received XML content length: 2 characters
+
+=== Starting XML Parsing Comparison ===
+Testing DOM...
+  ✓ DOM: 3 artikelen, 22ms, 543KB
+Testing SAX...
+  ✓ SAX: 3 artikelen, 13ms, 530KB
+Testing StAX...
+  ✓ StAX: 3 artikelen, 14ms, 543KB
+Testing JAXB...
+  ✓ JAXB: 3 artikelen, 55ms, 749KB
+
+=== Comparison Complete ===
+Snelste: SAX (13ms)
+Minste geheugen: SAX (530KB)
+Aanbeveling: Voor dit bestand: DOM is acceptabel (klein bestand). JAXB voor type-safe API's.
+=============================
+
+2025-12-17T07:26:57.553+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2025-12-17T07:26:57.557+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [nl.koop.xmldemo.dto.ComparisonResult@4735705e]
+2025-12-17T07:26:57.564+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:57.564+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:57.565+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json"
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateXmlWithSmallNumber" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.013">
+    <system-out><![CDATA[2025-12-17T07:26:57.597+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/generate/5
+2025-12-17T07:26:57.598+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:57.600+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/generate/5", parameters={}
+2025-12-17T07:26:57.601+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#generateLargeXml(int)
+Generating XML with 5 articles
+2025-12-17T07:26:57.602+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [text/plain, application/json, application/*+json, */*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-17T07:26:57.602+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+2025-12-17T07:26:57.604+01:00 DEBUG 59874 --- [xml-library-demo] [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:57.604+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:57.605+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateXmlEndpoint" classname="nl.koop.xmldemo.XmlDemoIntegrationTest" time="0.008">
+    <system-out><![CDATA[2025-12-17T07:26:57.611+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:51856/generate/10
+2025-12-17T07:26:57.612+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-12-17T07:26:57.613+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/generate/10", parameters={}
+2025-12-17T07:26:57.613+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to nl.koop.xmldemo.controller.XmlDemoController#generateLargeXml(int)
+Generating XML with 10 articles
+2025-12-17T07:26:57.614+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [text/plain, application/json, application/*+json, */*] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-17T07:26:57.614+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing ["<?xml version="1.0" encoding="UTF-8"?><EOL><wet id="wet-groot"><EOL>  <metadata><EOL>    <titel>Grote Test Wet</ (truncated)..."]
+2025-12-17T07:26:57.615+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2025-12-17T07:26:57.615+01:00 DEBUG 59874 --- [xml-library-demo] [-auto-1-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-17T07:26:57.615+01:00 DEBUG 59874 --- [xml-library-demo] [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+]]></system-out>
+  </testcase>
+</testsuite>

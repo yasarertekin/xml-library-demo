@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DOMParserService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">XML Library Demo</a> &gt; <a href="index.source.html" class="el_package">nl.koop.xmldemo.service</a> &gt; <span class="el_source">DOMParserService.java</span></div><h1>DOMParserService.java</h1><pre class="source lang-java linenums">package nl.koop.xmldemo.service;
+
+import nl.koop.xmldemo.dto.ParseResult;
+import org.springframework.stereotype.Service;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.ByteArrayInputStream;
+
+@Service
+<span class="fc" id="L10">public class DOMParserService {</span>
+
+    public ParseResult parse(String xmlContent) {
+<span class="fc" id="L13">        ParseResult result = new ParseResult(&quot;DOM&quot;);</span>
+
+        try {
+<span class="fc" id="L16">            System.gc();</span>
+<span class="fc" id="L17">            long startTime = System.nanoTime();</span>
+<span class="fc" id="L18">            long memBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();</span>
+
+<span class="fc" id="L20">            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();</span>
+<span class="fc" id="L21">            DocumentBuilder builder = factory.newDocumentBuilder();</span>
+<span class="fc" id="L22">            Document doc = builder.parse(new ByteArrayInputStream(xmlContent.getBytes()));</span>
+
+<span class="fc" id="L24">            NodeList artikelen = doc.getElementsByTagName(&quot;artikel&quot;);</span>
+<span class="fc" id="L25">            result.setAantalArtikelen(artikelen.getLength());</span>
+
+<span class="fc" id="L27">            int limit = Math.min(10, artikelen.getLength());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            for (int i = 0; i &lt; limit; i++) {</span>
+<span class="fc" id="L29">                Element artikel = (Element) artikelen.item(i);</span>
+<span class="fc" id="L30">                String id = artikel.getAttribute(&quot;id&quot;);</span>
+<span class="fc" id="L31">                NodeList kopNodes = artikel.getElementsByTagName(&quot;kop&quot;);</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">                String kop = kopNodes.getLength() &gt; 0 ? kopNodes.item(0).getTextContent() : &quot;Geen kop&quot;;</span>
+<span class="fc" id="L33">                result.addArtikelDetail(id + &quot;: &quot; + kop);</span>
+            }
+
+<span class="fc" id="L36">            long endTime = System.nanoTime();</span>
+<span class="fc" id="L37">            long memAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();</span>
+
+<span class="fc" id="L39">            result.setTijdMs((endTime - startTime) / 1_000_000);</span>
+<span class="fc" id="L40">            result.setGeheugenKb((memAfter - memBefore) / 1024);</span>
+
+<span class="fc" id="L42">        } catch (Exception e) {</span>
+<span class="fc" id="L43">            result.setError(&quot;DOM parsing error: &quot; + e.getMessage());</span>
+<span class="fc" id="L44">        }</span>
+
+<span class="fc" id="L46">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

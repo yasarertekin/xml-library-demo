@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComparisonResult.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">XML Library Demo</a> &gt; <a href="index.source.html" class="el_package">nl.koop.xmldemo.dto</a> &gt; <span class="el_source">ComparisonResult.java</span></div><h1>ComparisonResult.java</h1><pre class="source lang-java linenums">package nl.koop.xmldemo.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L6">public class ComparisonResult {</span>
+<span class="fc" id="L7">    private List&lt;ParseResult&gt; results = new ArrayList&lt;&gt;();</span>
+    private String snelste;
+    private String minsteGeheugen;
+    private String aanbeveling;
+
+    public void addResult(ParseResult result) {
+<span class="fc" id="L13">        results.add(result);</span>
+<span class="fc" id="L14">    }</span>
+
+    public void berekenStatistieken() {
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (results.isEmpty()) return;</span>
+
+<span class="fc" id="L19">        ParseResult snelsteResult = results.stream()</span>
+<span class="fc" id="L20">                .filter(ParseResult::isSuccess)</span>
+<span class="fc" id="L21">                .min((r1, r2) -&gt; Long.compare(r1.getTijdMs(), r2.getTijdMs()))</span>
+<span class="fc" id="L22">                .orElse(null);</span>
+
+<span class="fc" id="L24">        ParseResult minsteGeheugenResult = results.stream()</span>
+<span class="fc" id="L25">                .filter(ParseResult::isSuccess)</span>
+<span class="fc" id="L26">                .min((r1, r2) -&gt; Long.compare(r1.getGeheugenKb(), r2.getGeheugenKb()))</span>
+<span class="fc" id="L27">                .orElse(null);</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (snelsteResult != null) {</span>
+<span class="fc" id="L30">            this.snelste = snelsteResult.getLibrary() + &quot; (&quot; + snelsteResult.getTijdMs() + &quot;ms)&quot;;</span>
+        }
+
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (minsteGeheugenResult != null) {</span>
+<span class="fc" id="L34">            this.minsteGeheugen = minsteGeheugenResult.getLibrary() + &quot; (&quot; + minsteGeheugenResult.getGeheugenKb() + &quot;KB)&quot;;</span>
+        }
+
+<span class="fc" id="L37">        bepaalAanbeveling();</span>
+<span class="fc" id="L38">    }</span>
+
+    private void bepaalAanbeveling() {
+<span class="fc" id="L41">        StringBuilder sb = new StringBuilder();</span>
+<span class="fc" id="L42">        sb.append(&quot;Voor dit bestand: &quot;);</span>
+
+<span class="fc" id="L44">        long gemiddeldeTijd = results.stream()</span>
+<span class="fc" id="L45">                .filter(ParseResult::isSuccess)</span>
+<span class="fc" id="L46">                .mapToLong(ParseResult::getTijdMs)</span>
+<span class="fc" id="L47">                .sum() / Math.max(1, results.size());</span>
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (gemiddeldeTijd &gt; 100) {</span>
+<span class="fc" id="L50">            sb.append(&quot;SAX of StAX aanbevolen (groot bestand). &quot;);</span>
+        } else {
+<span class="fc" id="L52">            sb.append(&quot;DOM is acceptabel (klein bestand). &quot;);</span>
+        }
+
+<span class="fc" id="L55">        sb.append(&quot;JAXB voor type-safe API's.&quot;);</span>
+<span class="fc" id="L56">        this.aanbeveling = sb.toString();</span>
+<span class="fc" id="L57">    }</span>
+
+    // Getters
+    public List&lt;ParseResult&gt; getResults() {
+<span class="fc" id="L61">        return results;</span>
+    }
+
+    public String getSnelste() {
+<span class="fc" id="L65">        return snelste;</span>
+    }
+
+    public String getMinsteGeheugen() {
+<span class="fc" id="L69">        return minsteGeheugen;</span>
+    }
+
+    public String getAanbeveling() {
+<span class="fc" id="L73">        return aanbeveling;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,9 @@
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/service/StAXParserServiceTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/controller/XmlDemoControllerTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/service/SAXParserServiceTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/dto/ComparisonResultTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/service/XmlComparisonServiceTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/service/JAXBParserServiceTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/service/DOMParserServiceTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/dto/ParseResultTest.java
+/Users/yasarertekin/Development/xml-library-demo/src/test/java/nl/koop/xmldemo/XmlDemoIntegrationTest.java

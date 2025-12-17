@@ -1,0 +1,14 @@
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/dto/ParseResult.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/model/Metadata.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/model/Wet.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/model/Lid.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/service/SAXParserService.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/service/JAXBParserService.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/XmlLibraryDemoApplication.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/service/StAXParserService.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/service/XmlComparisonService.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/service/DOMParserService.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/dto/ComparisonResult.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/model/Hoofdstuk.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/model/Artikel.java
+/Users/yasarertekin/Development/xml-library-demo/src/main/java/nl/koop/xmldemo/controller/XmlDemoController.java

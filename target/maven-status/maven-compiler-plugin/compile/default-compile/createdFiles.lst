@@ -1,0 +1,15 @@
+nl/koop/xmldemo/dto/ComparisonResult.class
+nl/koop/xmldemo/model/Lid.class
+nl/koop/xmldemo/service/SAXParserService$ArtikelHandler.class
+nl/koop/xmldemo/controller/XmlDemoController.class
+nl/koop/xmldemo/model/Hoofdstuk.class
+nl/koop/xmldemo/XmlLibraryDemoApplication.class
+nl/koop/xmldemo/service/StAXParserService.class
+nl/koop/xmldemo/service/JAXBParserService.class
+nl/koop/xmldemo/service/SAXParserService.class
+nl/koop/xmldemo/model/Wet.class
+nl/koop/xmldemo/model/Artikel.class
+nl/koop/xmldemo/service/XmlComparisonService.class
+nl/koop/xmldemo/dto/ParseResult.class
+nl/koop/xmldemo/service/DOMParserService.class
+nl/koop/xmldemo/model/Metadata.class
