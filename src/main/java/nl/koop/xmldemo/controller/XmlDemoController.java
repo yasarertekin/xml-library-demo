@@ -1,7 +1,9 @@
 package nl.koop.xmldemo.controller;
 
 import nl.koop.xmldemo.dto.ComparisonResult;
+import nl.koop.xmldemo.dto.TransformResult;
 import nl.koop.xmldemo.service.XmlComparisonService;
+import nl.koop.xmldemo.service.XSLTTransformationService;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class XmlDemoController {
 
     private final XmlComparisonService comparisonService;
+    private final XSLTTransformationService xsltService;
 
-    public XmlDemoController(XmlComparisonService comparisonService) {
+    public XmlDemoController(XmlComparisonService comparisonService,
+                             XSLTTransformationService xsltService) {
         this.comparisonService = comparisonService;
+        this.xsltService = xsltService;
     }
 
     @GetMapping("/")
@@ -35,6 +40,63 @@ public class XmlDemoController {
         }
 
         return comparisonService.compareAllLibraries(xmlContent);
+    }
+
+    /**
+     * NEW: Transform XML to HTML using specific parser
+     */
+    @PostMapping(value = "/transform/{parser}",
+            consumes = MediaType.TEXT_PLAIN_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public TransformResult transform(@PathVariable String parser,
+                                     @RequestBody(required = false) String xmlContent) {
+        System.out.println("XSLT Transform request using: " + parser);
+
+        if (xmlContent == null || xmlContent.trim().isEmpty()) {
+            xmlContent = getVoorbeeldXml();
+        }
+
+        return switch (parser.toUpperCase()) {
+            case "DOM" -> xsltService.transformUsingDOM(xmlContent);
+            case "SAX" -> xsltService.transformUsingSAX(xmlContent);
+            case "STAX" -> xsltService.transformUsingStAX(xmlContent);
+            case "JAXB" -> xsltService.transformUsingJAXB(xmlContent);
+            default -> {
+                TransformResult error = new TransformResult(parser);
+                error.setError("Unknown parser: " + parser);
+                yield error;
+            }
+        };
+    }
+
+    /**
+     * NEW: Preview transformed HTML
+     */
+    @GetMapping("/preview")
+    public String preview(@RequestParam(defaultValue = "DOM") String parser,
+                          @RequestParam(required = false) String xml,
+                          Model model) {
+
+        String xmlContent = (xml != null && !xml.trim().isEmpty())
+                ? xml
+                : getVoorbeeldXml();
+
+        TransformResult result = switch (parser.toUpperCase()) {
+            case "DOM" -> xsltService.transformUsingDOM(xmlContent);
+            case "SAX" -> xsltService.transformUsingSAX(xmlContent);
+            case "STAX" -> xsltService.transformUsingStAX(xmlContent);
+            case "JAXB" -> xsltService.transformUsingJAXB(xmlContent);
+            default -> xsltService.transformUsingDOM(xmlContent);
+        };
+
+        model.addAttribute("html", result.isSuccess() ? result.getOutput() : "");
+        model.addAttribute("error", result.getError());
+        model.addAttribute("parser", parser);
+        model.addAttribute("tijdMs", result.getTijdMs());
+        model.addAttribute("geheugenKb", result.getGeheugenKb());
+
+        return "preview";
     }
 
     @GetMapping("/generate/{aantal}")

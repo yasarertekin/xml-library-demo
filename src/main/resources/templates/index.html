@@ -44,8 +44,40 @@
             opacity: 0.9;
         }
 
-        .content {
+        .tabs {
+            display: flex;
+            background: #f0f0f0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background: #e0e0e0;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .tab-content {
+            display: none;
             padding: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .section {
@@ -278,37 +310,84 @@
             margin: 5px 0;
             color: #555;
         }
+
+        .xslt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .xslt-button {
+            padding: 20px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .xslt-button:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .xslt-button h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .xslt-button p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>🔍 XML Library Comparison Tool</h1>
-        <p>Vergelijk DOM, SAX, StAX en JAXB performance - KOOP Demo voor Interview</p>
+        <h1>XML Library Comparison Tool</h1>
+        <p>Vergelijk DOM, SAX, StAX en JAXB performance + XSLT Transformaties</p>
     </div>
 
-    <div class="content">
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('parsing')">Parsing Comparison</button>
+        <button class="tab" onclick="switchTab('xslt')">XSLT Transformaties</button>
+    </div>
+
+    <!-- Parsing Tab -->
+    <div id="parsing-tab" class="tab-content active">
         <div class="section">
-            <h2>📝 XML Input</h2>
+            <h2>XML Input</h2>
             <textarea id="xmlInput" th:text="${voorbeeldXml}"></textarea>
 
             <div class="button-group">
                 <button class="btn-primary" onclick="compareLibraries()">
-                    🚀 Vergelijk Alle Libraries
+                    Vergelijk Alle Libraries
                 </button>
                 <button class="btn-secondary" onclick="generateXml(100)">
-                    📄 Genereer 100 Artikelen
+                    Genereer 100 Artikelen
                 </button>
                 <button class="btn-secondary" onclick="generateXml(1000)">
-                    📚 Genereer 1000 Artikelen
+                    Genereer 1000 Artikelen
                 </button>
                 <button class="btn-secondary" onclick="resetInput()">
-                    🔄 Reset naar Voorbeeld
+                    Reset naar Voorbeeld
                 </button>
             </div>
 
             <div class="info-box">
-                <h4>💡 Wat test deze applicatie?</h4>
+                <h4>Wat test deze applicatie?</h4>
                 <ul>
                     <li><strong>DOM</strong>: Tree-based parsing, hele document in memory</li>
                     <li><strong>SAX</strong>: Event-driven, streaming, laagste memory footprint</li>
@@ -320,15 +399,69 @@
 
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <p>Parsers aan het vergelijken... Dit kan even duren voor grote bestanden.</p>
+            <p>Parsers aan het vergelijken...</p>
         </div>
 
         <div class="results" id="results">
             <div class="section">
-                <h2>📊 Resultaten</h2>
+                <h2>Resultaten</h2>
                 <div class="results-grid" id="resultsGrid"></div>
-
                 <div class="summary" id="summary"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- XSLT Tab -->
+    <div id="xslt-tab" class="tab-content">
+        <div class="section">
+            <h2>XSLT Transformatie Demo</h2>
+
+            <div class="info-box">
+                <h4>Over XSLT Transformaties</h4>
+                <p>Deze demo toont hoe elk van de 4 parsers samenwerkt met XSLT om XML naar HTML te transformeren.
+                    Klik op een parser hieronder om de transformatie te zien.</p>
+                <ul>
+                    <li><strong>DOM</strong>: Native XSLT support (aanbevolen)</li>
+                    <li><strong>SAX</strong>: Via SAXSource adapter</li>
+                    <li><strong>StAX</strong>: Via StAXSource adapter</li>
+                    <li><strong>JAXB</strong>: Via DOM (marshal first)</li>
+                </ul>
+            </div>
+
+            <div class="xslt-grid">
+                <div class="xslt-button" onclick="transformXSLT('DOM')">
+                    <h3>DOM + XSLT</h3>
+                    <p>Best performance</p>
+                    <p>Native support</p>
+                </div>
+                <div class="xslt-button" onclick="transformXSLT('SAX')">
+                    <h3>SAX + XSLT</h3>
+                    <p>Memory efficient</p>
+                    <p>Via SAXSource</p>
+                </div>
+                <div class="xslt-button" onclick="transformXSLT('StAX')">
+                    <h3>StAX + XSLT</h3>
+                    <p>Pull-based</p>
+                    <p>Via StAXSource</p>
+                </div>
+                <div class="xslt-button" onclick="transformXSLT('JAXB')">
+                    <h3>JAXB + XSLT</h3>
+                    <p>Object-oriented</p>
+                    <p>Via DOM marshal</p>
+                </div>
+            </div>
+
+            <div class="loading" id="xslt-loading">
+                <div class="spinner"></div>
+                <p>Transformatie bezig...</p>
+            </div>
+
+            <div class="results" id="xslt-results">
+                <div class="section">
+                    <h2>Transformatie Resultaat</h2>
+                    <div id="xslt-info" class="summary" style="margin-bottom: 20px;"></div>
+                    <iframe id="xslt-preview"></iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -337,6 +470,16 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
     const voorbeeldXml = /*[[${voorbeeldXml}]]*/ '';
+
+    function switchTab(tab) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+        // Show selected tab
+        document.getElementById(tab + '-tab').classList.add('active');
+        event.target.classList.add('active');
+    }
 
     function resetInput() {
         document.getElementById('xmlInput').value = voorbeeldXml;
@@ -350,9 +493,9 @@
             const response = await fetch(`/generate/${aantal}`);
             const xml = await response.text();
             document.getElementById('xmlInput').value = xml;
-            alert(`✓ ${aantal} artikelen gegenereerd (${(xml.length / 1024).toFixed(0)} KB)`);
+            alert(`${aantal} artikelen gegenereerd (${(xml.length / 1024).toFixed(0)} KB)`);
         } catch (error) {
-            alert('❌ Fout bij genereren: ' + error.message);
+            alert('Fout bij genereren: ' + error.message);
         } finally {
             loading.classList.remove('active');
         }
@@ -363,14 +506,10 @@
         const loading = document.getElementById('loading');
         const results = document.getElementById('results');
 
-        console.log('XML length:', xmlContent.length, 'characters');
-
         loading.classList.add('active');
         results.classList.remove('active');
 
         try {
-            // Probeer eerst met text/plain
-            console.log('Sending request...');
             const response = await fetch('/compare', {
                 method: 'POST',
                 headers: {
@@ -380,21 +519,43 @@
                 body: xmlContent
             });
 
-            console.log('Response status:', response.status);
-
             if (!response.ok) {
-                const errorText = await response.text();
-                console.error('Error response:', errorText);
-                throw new Error(`HTTP ${response.status}: ${errorText.substring(0, 100)}`);
+                throw new Error(`HTTP ${response.status}`);
             }
 
             const data = await response.json();
-            console.log('Received data:', data);
             displayResults(data);
 
         } catch (error) {
-            console.error('Detailed error:', error);
-            alert('❌ Fout bij vergelijken:\n' + error.message + '\n\nCheck browser console (F12) voor details');
+            alert('Fout bij vergelijken: ' + error.message);
+        } finally {
+            loading.classList.remove('active');
+        }
+    }
+
+    async function transformXSLT(parser) {
+        const xmlContent = document.getElementById('xmlInput').value;
+        const loading = document.getElementById('xslt-loading');
+        const results = document.getElementById('xslt-results');
+
+        loading.classList.add('active');
+        results.classList.remove('active');
+
+        try {
+            const response = await fetch(`/transform/${parser}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain; charset=UTF-8',
+                    'Accept': 'application/json'
+                },
+                body: xmlContent
+            });
+
+            const data = await response.json();
+            displayXSLTResult(data, parser);
+
+        } catch (error) {
+            alert('XSLT transformatie fout: ' + error.message);
         } finally {
             loading.classList.remove('active');
         }
@@ -407,63 +568,95 @@
 
         resultsGrid.innerHTML = '';
 
-        if (!data.results) {
-            alert('❌ Geen resultaten ontvangen van server');
-            return;
-        }
-
         data.results.forEach(result => {
             const card = document.createElement('div');
             card.className = `result-card ${result.success ? 'success' : 'error'}`;
 
             if (result.success) {
                 card.innerHTML = `
-                    <h3>${escapeHtml(result.library)}</h3>
-                    <div class="metric">
-                        <span class="metric-label">📊 Artikelen:</span>
-                        <span class="metric-value">${result.aantalArtikelen}</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">⏱️ Tijd:</span>
-                        <span class="metric-value">${result.tijdMs}ms</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-label">💾 Geheugen:</span>
-                        <span class="metric-value">${result.geheugenKb}KB</span>
-                    </div>
-                    ${result.artikelDetails && result.artikelDetails.length > 0 ? `
-                        <div class="details">
-                            <h4>Gevonden Artikelen (eerste 10):</h4>
-                            <ul>
-                                ${result.artikelDetails.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
-                            </ul>
+                        <h3>${escapeHtml(result.library)}</h3>
+                        <div class="metric">
+                            <span class="metric-label">Artikelen:</span>
+                            <span class="metric-value">${result.aantalArtikelen}</span>
                         </div>
-                    ` : ''}
-                `;
+                        <div class="metric">
+                            <span class="metric-label">Tijd:</span>
+                            <span class="metric-value">${result.tijdMs}ms</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Geheugen:</span>
+                            <span class="metric-value">${result.geheugenKb}KB</span>
+                        </div>
+                        ${result.artikelDetails && result.artikelDetails.length > 0 ? `
+                            <div class="details">
+                                <h4>Gevonden Artikelen (eerste 10):</h4>
+                                <ul>
+                                    ${result.artikelDetails.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+                    `;
             } else {
                 card.innerHTML = `
-                    <h3>${escapeHtml(result.library)}</h3>
-                    <div class="error-message">
-                        ❌ ${escapeHtml(result.error || 'Unknown error')}
-                    </div>
-                `;
+                        <h3>${escapeHtml(result.library)}</h3>
+                        <div class="error-message">${escapeHtml(result.error || 'Unknown error')}</div>
+                    `;
             }
 
             resultsGrid.appendChild(card);
         });
 
         summary.innerHTML = `
-            <h3>🏆 Samenvatting</h3>
-            <div class="summary-item">
-                <strong>🥇 Snelste:</strong> ${escapeHtml(data.snelste || 'N/A')}
-            </div>
-            <div class="summary-item">
-                <strong>💚 Minste geheugen:</strong> ${escapeHtml(data.minsteGeheugen || 'N/A')}
-            </div>
-            <div class="summary-item">
-                <strong>💡 Aanbeveling:</strong> ${escapeHtml(data.aanbeveling || 'N/A')}
-            </div>
-        `;
+                <h3>Samenvatting</h3>
+                <div class="summary-item">
+                    <strong>Snelste:</strong> ${escapeHtml(data.snelste || 'N/A')}
+                </div>
+                <div class="summary-item">
+                    <strong>Minste geheugen:</strong> ${escapeHtml(data.minsteGeheugen || 'N/A')}
+                </div>
+                <div class="summary-item">
+                    <strong>Aanbeveling:</strong> ${escapeHtml(data.aanbeveling || 'N/A')}
+                </div>
+            `;
+
+        results.classList.add('active');
+        results.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function displayXSLTResult(data, parser) {
+        const results = document.getElementById('xslt-results');
+        const info = document.getElementById('xslt-info');
+        const preview = document.getElementById('xslt-preview');
+
+        if (data.success) {
+            info.innerHTML = `
+                    <h3>${parser} XSLT Transformatie</h3>
+                    <div class="summary-item">
+                        <strong>Parser:</strong> ${parser}
+                    </div>
+                    <div class="summary-item">
+                        <strong>Transformatie tijd:</strong> ${data.tijdMs}ms
+                    </div>
+                    <div class="summary-item">
+                        <strong>Geheugen gebruikt:</strong> ${data.geheugenKb}KB
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9em;">
+                        De wet is getransformeerd naar HTML met behulp van ${parser} en XSLT.
+                        Scroll naar beneden om het resultaat te zien.
+                    </p>
+                `;
+
+            // Load HTML in iframe
+            const blob = new Blob([data.output], { type: 'text/html' });
+            preview.src = URL.createObjectURL(blob);
+
+        } else {
+            info.innerHTML = `
+                    <h3>Transformatie Fout</h3>
+                    <div class="error-message">${escapeHtml(data.error)}</div>
+                `;
+            preview.src = '';
+        }
 
         results.classList.add('active');
         results.scrollIntoView({ behavior: 'smooth' });
@@ -477,7 +670,5 @@
     }
     /*]]>*/
 </script>
-
-
 </body>
 </html>

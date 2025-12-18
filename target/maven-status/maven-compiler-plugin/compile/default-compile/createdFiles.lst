@@ -7,6 +7,8 @@ nl/koop/xmldemo/XmlLibraryDemoApplication.class
 nl/koop/xmldemo/service/StAXParserService.class
 nl/koop/xmldemo/service/JAXBParserService.class
 nl/koop/xmldemo/service/SAXParserService.class
+nl/koop/xmldemo/service/XSLTTransformationService.class
+nl/koop/xmldemo/dto/TransformResult.class
 nl/koop/xmldemo/model/Wet.class
 nl/koop/xmldemo/model/Artikel.class
 nl/koop/xmldemo/service/XmlComparisonService.class

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: nl.koop.xmldemo.service.XmlComparisonServiceTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.833 s - in nl.koop.xmldemo.service.XmlComparisonServiceTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.882 s - in nl.koop.xmldemo.service.XmlComparisonServiceTest

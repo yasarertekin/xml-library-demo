@@ -219,29 +219,29 @@ The project contains **87 unit tests** distributed across:
 ```java
 @Test
 void testDOMParsing() {
-    DOMParserService service = new DOMParserService();
-    String xml = "<?xml version=\"1.0\"?><wet id=\"w1\">...</wet>";
-    
-    ParseResult result = service.parse(xml);
-    
-    assertTrue(result.isSuccess());
-    assertEquals("DOM", result.getLibrary());
-    assertEquals(1, result.getAantalArtikelen());
-}
+        DOMParserService service = new DOMParserService();
+        String xml = "<?xml version=\"1.0\"?><wet id=\"w1\">...</wet>";
+
+        ParseResult result = service.parse(xml);
+
+        assertTrue(result.isSuccess());
+        assertEquals("DOM", result.getLibrary());
+        assertEquals(1, result.getAantalArtikelen());
+        }
 ```
 
 **Performance Test:**
 ```java
 @Test
 void testSAXPerformanceWithLargeFile() {
-    // Generate 1000 articles
-    String largeXml = generateXml(1000);
-    
-    ParseResult result = saxParser.parse(largeXml);
-    
-    assertTrue(result.getTijdMs() < 100);
-    assertTrue(result.getGeheugenKb() < 1024);
-}
+        // Generate 1000 articles
+        String largeXml = generateXml(1000);
+
+        ParseResult result = saxParser.parse(largeXml);
+
+        assertTrue(result.getTijdMs() < 100);
+        assertTrue(result.getGeheugenKb() < 1024);
+        }
 ```
 
 ### Test Reports
@@ -267,13 +267,13 @@ DOM loads the **entire XML document** into memory as a **tree structure**. You c
 
 ```java
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-DocumentBuilder builder = factory.newDocumentBuilder();
-Document doc = builder.parse(xmlFile);  // Entire document in memory
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(xmlFile);  // Entire document in memory
 
 // Random access: go to any element
-Element root = doc.getDocumentElement();
-NodeList artikelen = doc.getElementsByTagName("artikel");
-Element artikel5 = (Element) artikelen.item(4);  // Direct to article 5
+        Element root = doc.getDocumentElement();
+        NodeList artikelen = doc.getElementsByTagName("artikel");
+        Element artikel5 = (Element) artikelen.item(4);  // Direct to article 5
 ```
 
 **Memory Model:**
@@ -318,7 +318,7 @@ Everything in memory (approximately 10x XML size)
 ```java
 // Transform law to HTML for display
 Document wetDoc = parseDOM(wetXml);
-String html = applyXSLT(wetDoc, "wet-to-html.xsl");
+        String html = applyXSLT(wetDoc, "wet-to-html.xsl");
 ```
 
 ---
@@ -333,25 +333,25 @@ SAX is an **event-driven parser**. It reads the XML file **sequentially** and ca
 
 ```java
 SAXParserFactory factory = SAXParserFactory.newInstance();
-SAXParser parser = factory.newSAXParser();
+        SAXParser parser = factory.newSAXParser();
 
 // Define a Handler with callbacks
-DefaultHandler handler = new DefaultHandler() {
-    @Override
-    public void startElement(String uri, String localName, 
-                             String qName, Attributes attrs) {
+        DefaultHandler handler = new DefaultHandler() {
+@Override
+public void startElement(String uri, String localName,
+        String qName, Attributes attrs) {
         if ("artikel".equals(qName)) {
-            System.out.println("Article found!");  // Callback
+        System.out.println("Article found!");  // Callback
         }
-    }
-    
-    @Override
-    public void characters(char[] ch, int start, int length) {
-        String text = new String(ch, start, length);  // Content
-    }
-};
+        }
 
-parser.parse(xmlFile, handler);  // Streams through file
+@Override
+public void characters(char[] ch, int start, int length) {
+        String text = new String(ch, start, length);  // Content
+        }
+        };
+
+        parser.parse(xmlFile, handler);  // Streams through file
 ```
 
 **Processing Model:**
@@ -395,9 +395,9 @@ Memory: Only current element (approximately 50KB constant)
 ```java
 // Validate all 10,000 laws for integrity
 for (File wet : alleWetten) {
-    SAXParser parser = createValidator();
-    parser.parse(wet, validationHandler);  // Uses maximum 1MB RAM
-}
+        SAXParser parser = createValidator();
+        parser.parse(wet, validationHandler);  // Uses maximum 1MB RAM
+        }
 ```
 
 ---
@@ -412,26 +412,26 @@ StAX is a **pull-based parser**. Instead of callbacks (push), **you request** (p
 
 ```java
 XMLInputFactory factory = XMLInputFactory.newInstance();
-XMLStreamReader reader = factory.createXMLStreamReader(xmlFile);
+        XMLStreamReader reader = factory.createXMLStreamReader(xmlFile);
 
-while (reader.hasNext()) {
-    int event = reader.next();  // You request next event
-    
-    if (event == XMLStreamConstants.START_ELEMENT) {
+        while (reader.hasNext()) {
+        int event = reader.next();  // You request next event
+
+        if (event == XMLStreamConstants.START_ELEMENT) {
         String name = reader.getLocalName();
-        
+
         if ("artikel".equals(name)) {
-            String id = reader.getAttributeValue(null, "id");
-            System.out.println("Article: " + id);
-            
-            // Can exit early
-            if ("art-999".equals(id)) {
-                break;  // Stop parsing (not possible with SAX)
-            }
+        String id = reader.getAttributeValue(null, "id");
+        System.out.println("Article: " + id);
+
+        // Can exit early
+        if ("art-999".equals(id)) {
+        break;  // Stop parsing (not possible with SAX)
         }
-    }
-}
-reader.close();
+        }
+        }
+        }
+        reader.close();
 ```
 
 **Processing Model:**
@@ -471,13 +471,13 @@ Memory: Current event context only (approximately 100KB)
 ```java
 // Search for specific article in large law (100MB)
 XMLStreamReader reader = factory.createXMLStreamReader(largeWet);
-while (reader.hasNext()) {
-    if (isArtikel() && getId().equals("art-523")) {
+        while (reader.hasNext()) {
+        if (isArtikel() && getId().equals("art-523")) {
         Artikel artikel = extractArtikel();
         return artikel;  // Stop! Saves 99% parse time
-    }
-    reader.next();
-}
+        }
+        reader.next();
+        }
 ```
 
 ---
@@ -497,13 +497,13 @@ JAXB **automatically maps XML to Java objects** (and vice versa). You define Jav
 public class Wet {
     @XmlAttribute
     private String id;
-    
+
     @XmlElement
     private Metadata metadata;
-    
+
     @XmlElement(name = "hoofdstuk")
     private List<Hoofdstuk> hoofdstukken;
-    
+
     // Getters/Setters
 }
 
@@ -511,7 +511,7 @@ public class Wet {
 public class Hoofdstuk {
     @XmlAttribute
     private int nummer;
-    
+
     @XmlElement(name = "artikel")
     private List<Artikel> artikelen;
 }
@@ -520,25 +520,25 @@ public class Hoofdstuk {
 **Step 2: Parse XML to Object:**
 ```java
 JAXBContext context = JAXBContext.newInstance(Wet.class);
-Unmarshaller unmarshaller = context.createUnmarshaller();
+        Unmarshaller unmarshaller = context.createUnmarshaller();
 
 // XML to Java Object (automatic)
-Wet wet = (Wet) unmarshaller.unmarshal(new File("wet.xml"));
+        Wet wet = (Wet) unmarshaller.unmarshal(new File("wet.xml"));
 
 // Now work with regular Java objects
-String titel = wet.getMetadata().getTitel();
-int aantalArtikelen = wet.getHoofdstukken().stream()
-    .mapToInt(h -> h.getArtikelen().size())
-    .sum();
+        String titel = wet.getMetadata().getTitel();
+        int aantalArtikelen = wet.getHoofdstukken().stream()
+        .mapToInt(h -> h.getArtikelen().size())
+        .sum();
 ```
 
 **Step 3: Object to XML:**
 ```java
 Marshaller marshaller = context.createMarshaller();
-marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 // Java Object to XML (automatic)
-marshaller.marshal(wet, new File("output.xml"));
+        marshaller.marshal(wet, new File("output.xml"));
 ```
 
 **Processing Model:**
@@ -584,16 +584,16 @@ Type-Safe with IDE autocomplete and refactoring support
 // REST API endpoint
 @GetMapping("/wetten/{id}")
 public Wet getWet(@PathVariable String id) {
-    Wet wet = repository.findById(id);
-    return wet;  // Spring automatically converts to XML/JSON
-}
+        Wet wet = repository.findById(id);
+        return wet;  // Spring automatically converts to XML/JSON
+        }
 
 // Type-safe business logic
-wet.getHoofdstukken().forEach(hoofdstuk -> {
-    hoofdstuk.getArtikelen().forEach(artikel -> {
+        wet.getHoofdstukken().forEach(hoofdstuk -> {
+        hoofdstuk.getArtikelen().forEach(artikel -> {
         validateArtikel(artikel);  // IDE knows all properties
-    });
-});
+        });
+        });
 ```
 
 ---
